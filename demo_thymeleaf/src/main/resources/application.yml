@@ -1,0 +1,11 @@
+server:
+  port: 7000
+
+spring:
+  thymeleaf:
+    cache: false
+
+  messages:
+    basename: message
+    encoding: utf-8
+

@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+
+    <link rel="stylesheet" th:href="@{../css/my.css}" href="../css/my.css">
+
+
+</head>
+
+<body>
+
+<br/>
+
+    #{}:<br/>
+    获取配置文件的内容：<span th:text="#{title}"></span>
+
+    <br/><br/>
+
+    ${}:<br/>
+    后台代码变量中的值：<span th:text="${vari}"></span>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+
+<body>
+
+<br/>
+
+    thymeleaf遍历语法：<br/><br/>
+
+    <table border="1" align="center" width="450px">
+        <tr>
+            <td>索引</td>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>总条数</td>
+            <td>第一个</td>
+            <td>最后一个</td>
+            <td>奇偶数</td>
+        </tr>
+
+        <tr th:each="u,fff : ${userList}" th:style="${fff.even ? 'background: red' : ''}">
+            <td th:text="${fff.index}"></td>
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.name}"></td>
+            <td th:text="${u.age}"></td>
+            <td rowspan="0" th:if="${fff.first}" th:text="${fff.size}"></td>
+            <td th:text="${fff.first}"></td>
+            <td th:text="${fff.last}"></td>
+            <td th:text="${fff.even}"></td>
+        </tr>
+
+    </table>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+server:
+  port: 7000
+
+spring:
+  datasource:
+    url: jdbc:mysql://db:3306/atcrowdfunding?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    # 一个小技巧：对spring boot配置文件增加filters属性，会在执行sql语句
+    # 时产生监控信息，方便我们看到每条sql语句的执行时间、执行结果等信息
+    filters: stat
+
+  application:
+    name: SCW-USER
+
+  redis:
+    host: myredis
+    port: 6379
+    password: root
+    database: 1
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:com/offcn/user/mapper/*.xml
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    com:
+      offcn: debug
+  file:
+    name: /log/scw_user.log
+
+sms:
+  host: http://dingxin.market.alicloudapi.com
+  path: /dx/sendSms
+  method: POST
+  appcode: f22edecda923475b9fb7c504e9362408
+  tplid: TP1711063
+
